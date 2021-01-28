@@ -12,6 +12,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        src: 'https://shinbunbun.info/cert-verifier-js/dist/verifier-iife.js'
+      }
     ]
   },
 
@@ -34,10 +39,15 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@blockcerts/blockcerts-verifier/dist/main.js'
+    '@nuxtjs/dotenv'
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+
+  server: {
+    port: 8001, // デフォルト: 3000
+    host: '0.0.0.0' // デフォルト: localhost
   }
 }
